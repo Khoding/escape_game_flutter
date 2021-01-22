@@ -27,7 +27,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Escape Game"),
+      ),
       body: Column(
         children: [
           //Le FakeTextField
@@ -42,13 +44,24 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 : MediaQuery.of(context).size.height -
                     MediaQuery.of(context).padding.top -
                     kToolbarHeight,
-            child: Center(
-              child: FakeTextField(
-                text: Provider.of<TypedPasswordProvider>(context)
-                    .typedPasswordStars,
-                hint: "Entrez le mot de passe",
-                onTap: _enableKeyBoard,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Coffre fort",
+                  style: Theme.of(context).textTheme.headline4,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 24),
+                Center(
+                  child: FakeTextField(
+                    text: Provider.of<TypedPasswordProvider>(context)
+                        .typedPasswordStars,
+                    hint: "Entrez le mot de passe",
+                    onTap: _enableKeyBoard,
+                  ),
+                ),
+              ],
             ),
           ),
           //Le clavier

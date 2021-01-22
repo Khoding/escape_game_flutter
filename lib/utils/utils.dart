@@ -7,14 +7,15 @@ class Utils {
 
   ///Génère un mdp aléatoire
   static void generatePassword() {
-    Random rnd = new Random();
+    password = "E";
+    /*Random rnd = new Random();
     int passwordLength = 8;
     passwordLength += rnd.nextInt(4);
     password = "";
     for (var i = 0; i < passwordLength; i++) {
       password += chars[rnd.nextInt(chars.length)];
-    }
-    print("Mot de passe : $password");
+    }*/
+    //print("Mot de passe : $password");
   }
 
   ///Liste de tous les caractères utilisables pour le mdp
