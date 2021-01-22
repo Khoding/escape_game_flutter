@@ -17,6 +17,9 @@ class _KeyboardState extends State<Keyboard> {
   //Provider des touches
   var keysProvider;
 
+  //
+  bool _isShuffleButtonEnabled = true;
+
   //Appelé quand le widget doit être reconstruit
   @override
   void didChangeDependencies() {
@@ -36,6 +39,7 @@ class _KeyboardState extends State<Keyboard> {
       children: [
         Row(
           children: [
+            //Bouton Effacer
             Container(
               width: MediaQuery.of(context).size.width / 3 - 8,
               margin: EdgeInsets.symmetric(horizontal: 4),
@@ -50,13 +54,18 @@ class _KeyboardState extends State<Keyboard> {
                 child: Text("Effacer"),
               ),
             ),
+            //Bouton Mélanger
             Container(
               width: MediaQuery.of(context).size.width / 3 - 8,
               margin: EdgeInsets.symmetric(horizontal: 4),
               child: RaisedButton(
-                onPressed: () =>
-                    Provider.of<KeysProvider>(context, listen: false)
-                        .shuffleKeys(),
+                onPressed: _isShuffleButtonEnabled
+                    ? () {
+                        Provider.of<KeysProvider>(context, listen: false)
+                            .shuffleKeys();
+                        _isShuffleButtonEnabled = false;
+                      }
+                    : null,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
@@ -64,6 +73,7 @@ class _KeyboardState extends State<Keyboard> {
                 child: Text("Mélanger"),
               ),
             ),
+            //Boutton Valider
             Container(
               width: MediaQuery.of(context).size.width / 3 - 8,
               margin: EdgeInsets.symmetric(horizontal: 4),
