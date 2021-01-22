@@ -21,7 +21,7 @@ class TypedPasswordProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void validatePassword() {
-    if (typedPassword == Utils.password) {}
+  bool validatePassword() {
+    return typedPassword == Utils.password;
   }
 }

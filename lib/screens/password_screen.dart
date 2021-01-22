@@ -1,5 +1,5 @@
 import 'package:escape_game_flutter/providers/typed_password_provider.dart';
-import 'package:escape_game_flutter/widgets/fake_form_field.dart';
+import 'package:escape_game_flutter/widgets/fake_text_field.dart';
 import 'package:escape_game_flutter/widgets/keyboard/keyboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 ///Page permettant d'entrer le mot de passe
 class PasswordScreen extends StatefulWidget {
   //chemin pour accéder à la page
-  static const routeName = '/passwordScreen';
+  static const routeName = '/password_screen';
 
   @override
   _PasswordScreenState createState() => _PasswordScreenState();

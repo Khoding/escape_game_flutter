@@ -1,5 +1,6 @@
 import 'package:escape_game_flutter/providers/keys_provider.dart';
 import 'package:escape_game_flutter/providers/typed_password_provider.dart';
+import 'package:escape_game_flutter/screens/end_screen.dart';
 import 'package:escape_game_flutter/screens/home_page_screen.dart';
 import 'package:escape_game_flutter/screens/password_screen.dart';
 import 'package:escape_game_flutter/screens/start_screen.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         HomePageScreen.routeName: (context) => HomePageScreen(),
         StartScreen.routeName: (context) => StartScreen(),
         PasswordScreen.routeName: (context) => PasswordScreen(),
+        EndScreen.routeName: (context) => EndScreen(),
       },
     );
   }

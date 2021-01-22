@@ -1,5 +1,6 @@
 import 'package:escape_game_flutter/providers/keys_provider.dart';
 import 'package:escape_game_flutter/providers/typed_password_provider.dart';
+import 'package:escape_game_flutter/screens/end_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -67,7 +68,15 @@ class _KeyboardState extends State<Keyboard> {
               width: MediaQuery.of(context).size.width / 3 - 8,
               margin: EdgeInsets.symmetric(horizontal: 4),
               child: RaisedButton(
-                onPressed: () => print("Demande de validation du mdp"),
+                onPressed: () {
+                  if (Provider.of<TypedPasswordProvider>(context, listen: false)
+                      .validatePassword()) {
+                    Navigator.pushReplacementNamed(
+                        context, EndScreen.routeName);
+                  } else {
+                    print("Bouh ! Vous êtes nul !");
+                  }
+                },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),

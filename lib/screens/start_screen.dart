@@ -5,7 +5,7 @@ import 'package:flutter/Material.dart';
 ///Page qui présente le mot de passe, qu'il faudra retenir et taper à la page suivante
 class StartScreen extends StatelessWidget {
   //chemin pour accéder à la page
-  static const routeName = '/StartScreen';
+  static const routeName = '/start_screen';
 
   @override
   Widget build(BuildContext context) {
